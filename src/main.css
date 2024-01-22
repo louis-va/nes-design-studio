@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kanit";
+  src: url("./assets/fonts/Kanit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@layer base {
+  * { @apply box-border focus-visible:outline-0 focus-visible:ring focus-visible:ring-red/50 }
+  :root { @apply font-mono text-black bg-white }
+  ::selection { @apply bg-red/50 }
+  #root { @apply relative }
+}
