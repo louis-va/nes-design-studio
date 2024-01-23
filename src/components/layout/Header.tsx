@@ -3,7 +3,7 @@ import ndsLogo from "@/assets/images/logo-nds.svg"
 
 const Header = () => {
   return (
-    <header className="absolute z-50 flex justify-between items-center bg-[#ECECEC]/40 backdrop-blur-lg w-full px-4 py-3">
+    <header className="absolute z-50 flex justify-between items-center bg-[#F6F6F6]/40 backdrop-blur-lg w-full px-4 py-3">
       <div>
         <img 
           src={nintendoLogo} 

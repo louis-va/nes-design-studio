@@ -79,7 +79,11 @@ const Tabs = ({ children }: TabsProps) => {
           <Tab 
             key={index}
             active={index===selected} 
-            onClick={()=>setSelected(index)}
+            onClick={()=>{
+              setSelected(index);
+              if (tab.props.onClick)
+                tab.props.onClick();
+            }}
           >
             {tab.props.children}
           </Tab>

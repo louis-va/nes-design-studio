@@ -1,32 +1,23 @@
-import { Suspense, useRef, useState } from 'react'
+import { Suspense, useRef } from 'react'
 import { ContactShadows, Environment, CameraControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { useNESModelStore } from "@/store/store";
 
 import NES from './Model';
 
 const ModelView = () => {
-  const [position, setPosition] = useState({x: 2, y: 2, z: 2})
-
+  // Set reactive camera movements
+  const cameraPosition = useNESModelStore((state) => state.cameraPosition)
+  const cameraZoom = useNESModelStore((state) => state.cameraZoom)
   const cameraControlsRef = useRef<CameraControls | null>(null);
-
-  if (cameraControlsRef) {
-    cameraControlsRef.current?.setPosition(position.x, position.y, position.z, true)
-    cameraControlsRef.current?.dollyTo(4, true)
-  }
-
-  const HandleClick = () => {
-    setPosition({
-      x: 3,
-      y: 2,
-      z: 3
-    })
-  }
+  cameraControlsRef.current?.setPosition(cameraPosition.x, cameraPosition.y, cameraPosition.z, true)
+  cameraControlsRef.current?.dollyTo(cameraZoom, true)
 
   return (
-    <section className="h-full w-full bg-gradient-to-b from-[#ECECEC] to-[#D5D5D5]">
-      <Canvas onClick={() => HandleClick()} shadows camera={{ position: [3, 2, 4.75], fov: 25 }} className='cursor-grab active:cursor-grabbing'>
+    <section className="h-full w-full bg-gradient-to-b from-[#F6F6F6] to-[#E9E9E9]">
+      <Canvas shadows camera={{ position: [3, 2, 4.75], fov: 25 }} className='cursor-grab active:cursor-grabbing'>
         <ambientLight intensity={1} />
-        <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
+        <spotLight intensity={0.3} angle={0.5} penumbra={1} position={[10, 15, 10]} castShadow />
         <Suspense fallback={null}>
           <NES />
         </Suspense>
@@ -35,7 +26,7 @@ const ModelView = () => {
         <CameraControls
           ref={cameraControlsRef}
           draggingSmoothTime={.35}
-          smoothTime={.5}
+          smoothTime={.35}
           minDistance={2}
           maxDistance={8}
           minPolarAngle={.9}

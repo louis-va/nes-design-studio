@@ -9,6 +9,7 @@ Title: NES nintendo
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useNESModelStore } from "@/store/store";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -40,7 +41,15 @@ type GLTFResult = GLTF & {
 };
 
 export default function NES(props: JSX.IntrinsicElements["group"]) {
+  // Load model
   const { nodes, materials } = useGLTF("/NES.gltf") as GLTFResult;
+
+  // Set reactive colors
+  const topCoverColor = useNESModelStore((state) => state.topCoverColor)
+  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
+  const controlBarColor = useNESModelStore((state) => state.controlBarColor)
+  const letteringColor = useNESModelStore((state) => state.letteringColor)
+
   return (
     <group {...props} dispose={null}>
       <group position={[0, -0.2, 0]}>
@@ -49,19 +58,21 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
           receiveShadow
           geometry={nodes.Object_4.geometry}
           material={materials["Material.001"]}
-          //material-color={'#FF0000'}
+          material-color={controlBarColor}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_5.geometry}
           material={materials["Material.002"]}
+          material-color={topCoverColor}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_6.geometry}
           material={materials["Material.003"]}
+          material-color={bottomCoverColor}
         />
         <mesh
           castShadow
@@ -110,6 +121,7 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
           receiveShadow
           geometry={nodes.Object_14.geometry}
           material={materials.logo}
+          material-color={letteringColor}
         />
       </group>
     </group>
