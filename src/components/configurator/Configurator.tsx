@@ -5,7 +5,7 @@ import nesBottomIcon from "@/assets/images/nes-bottom-icon.svg"
 import nesStripeIcon from "@/assets/images/nes-stripe-icon.svg"
 import nesTextIcon from "@/assets/images/nes-text-icon.svg"
 
-const Customizer = () => {
+const Configurator = () => {
   return (
     <section className="bg-white">
       <Tabs>
@@ -16,23 +16,23 @@ const Customizer = () => {
           <Tab><img src={nesTextIcon} className="w-12 h-12" role="presentation" /></Tab>
         </TabList>
         <TabPanel>
-          <TopCoverCustomizer />
+          <TopCoverConfig />
         </TabPanel>
         <TabPanel>
-          <BottomCoverCustomizer />
+          <BottomCoverConfig />
         </TabPanel>
         <TabPanel>
-          <ControlBarCustomizer />
+          <ControlBarConfig />
         </TabPanel>
         <TabPanel>
-          <LetteringCustomizer />
+          <LetteringConfig />
         </TabPanel>
       </Tabs>
     </section>
   )
 }
 
-const TopCoverCustomizer = () => {
+const TopCoverConfig = () => {
   return (
     <>
       <Title as="h2" variant="h2">Top cover</Title>
@@ -40,7 +40,7 @@ const TopCoverCustomizer = () => {
   )
 }
 
-const BottomCoverCustomizer = () => {
+const BottomCoverConfig = () => {
   return (
     <>
       <Title as="h2" variant="h2">Bottom cover</Title>
@@ -48,7 +48,7 @@ const BottomCoverCustomizer = () => {
   )
 }
 
-const ControlBarCustomizer = () => {
+const ControlBarConfig = () => {
   return (
     <>
       <Title as="h2" variant="h2">Control bar</Title>
@@ -56,7 +56,7 @@ const ControlBarCustomizer = () => {
   )
 }
 
-const LetteringCustomizer = () => {
+const LetteringConfig = () => {
   return (
     <>
       <Title as="h2" variant="h2">Lettering</Title>
@@ -64,4 +64,4 @@ const LetteringCustomizer = () => {
   )
 }
 
-export default Customizer
+export default Configurator

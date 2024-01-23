@@ -1,7 +1,7 @@
 import { SplitView, SplitViewTop, SplitViewBottom } from "@/components/layout/SplitView"
 import Header from "@/components/layout/Header"
-import Model3d from "@/components/configurator/Model3d"
-import Customizer from "@/components/configurator/Customizer"
+import ModelView from "@/components/configurator/ModelView"
+import Configurator from "@/components/configurator/Configurator"
 import ConfigFooter from "@/components/configurator/ConfigFooter"
 
 const Configure = () => {
@@ -10,10 +10,10 @@ const Configure = () => {
       <SplitView>
         <SplitViewTop>
           <Header />
-          <Model3d />
+          <ModelView />
         </SplitViewTop>
         <SplitViewBottom>
-          <Customizer />
+          <Configurator />
           <ConfigFooter />
         </SplitViewBottom>
       </SplitView>
