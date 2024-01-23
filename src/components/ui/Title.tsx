@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 
-interface TypographyProps {
+interface TitleProps {
   as: keyof JSX.IntrinsicElements;
   variant: "h1" | "h2" | "h3" | "h4";
   children: ReactNode;
   className?: string;
 }
 
-const Title = ({ as, variant, children, className='' }: TypographyProps) => {
+const Title = ({ as, variant, children, className='' }: TitleProps) => {
   const Tag = as
 
   switch (variant) {

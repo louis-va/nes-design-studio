@@ -2,6 +2,7 @@ import { SplitView, SplitViewTop, SplitViewBottom } from "@/components/layout/Sp
 import Header from "@/components/layout/Header"
 import Model3d from "@/components/configurator/Model3d"
 import Customizer from "@/components/configurator/Customizer"
+import ConfigFooter from "@/components/configurator/ConfigFooter"
 
 const Configure = () => {
   return (
@@ -13,6 +14,7 @@ const Configure = () => {
         </SplitViewTop>
         <SplitViewBottom>
           <Customizer />
+          <ConfigFooter />
         </SplitViewBottom>
       </SplitView>
     </>
