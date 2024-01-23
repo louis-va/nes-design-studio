@@ -14,8 +14,12 @@ export default {
         muted: 'rgb(153, 153, 153)'
       },
       'red': {
-        DEFAULT: 'rgb(227, 0, 0)'
-      }
+        DEFAULT: 'rgb(204, 33, 49)'
+      },
+      'transparent': 'rgba(0, 0, 0, 0)',
+      'border-color': {
+        DEFAULT: 'rgb(210, 210, 210)'
+      },
     }
   }
 }
