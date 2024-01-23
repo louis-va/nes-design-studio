@@ -10,7 +10,7 @@ const Configurator = () => {
   const setCamera = useNESModelStore((state) => state.setCamera)
 
   return (
-    <section>
+    <section className="flex-grow">
       <Tabs>
         <TabList>
           <Tab onClick={()=>setCamera(3, 2.5, 5, 6)}><img src={nesTopIcon} className="w-12 h-12" role="presentation" /></Tab>

@@ -9,10 +9,7 @@ interface TabProps extends React.ComponentProps<"button"> {
 const Tab = ({ active, children, ...props }: TabProps) => {
   return (
     <button 
-      className={`
-        relative -bottom-[1px] -mt-[1px] border-b-2 px-2 py-3 transition-all duration-150
-        ${(active?'border-b-red opacity-100':'border-b-transparent opacity-50')}
-      `} 
+      className={`relative -bottom-[1px] -mt-[1px] border-b-2 px-2 py-3 transition-all duration-150 ${(active?'border-b-red opacity-100':'border-b-transparent opacity-50')}`} 
       type="button" 
       {...props}
     >
@@ -43,7 +40,7 @@ interface TabPanelProps extends React.ComponentProps<"div">{
 
 const TabPanel = ({ children, ...props }: TabPanelProps) => {
   return (
-    <div className={`${props.className} h-56 p-4 overflow-y-auto`}>
+    <div className={`flex-grow p-4 overflow-y-auto ${props.className} `}>
       {children}
     </div>
   )
@@ -73,7 +70,7 @@ const Tabs = ({ children }: TabsProps) => {
   })
 
   return (
-    <div>
+    <>
       <TabList>
         {tabs.map((tab: React.ReactElement, index: number) => (
           <Tab 
@@ -89,17 +86,15 @@ const Tabs = ({ children }: TabsProps) => {
           </Tab>
         ))}
       </TabList>
-      <div>
-        {panels.map((panel: React.ReactElement, index: number) => (
-          <TabPanel 
-            key={index}
-            className={index===selected?'':'hidden'}
-          >
-            {panel.props.children}
-          </TabPanel>
-        ))}
-      </div>
-    </div>
+      {panels.map((panel: React.ReactElement, index: number) => (
+        <TabPanel 
+          key={index}
+          className={index===selected?'':'hidden'}
+        >
+          {panel.props.children}
+        </TabPanel>
+      ))}
+    </>
   )
 }
 

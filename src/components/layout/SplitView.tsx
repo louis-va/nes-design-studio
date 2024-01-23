@@ -14,7 +14,7 @@ interface SplitViewProps {
 
 const SplitViewTop = ({ children }: SplitViewTopProps) => {
   return (
-    <div className="relative flex-grow">
+    <div className="relative flex-grow md:w-2/3">
       {children}
     </div>
   )
@@ -22,7 +22,7 @@ const SplitViewTop = ({ children }: SplitViewTopProps) => {
 
 const SplitViewBottom = ({ children }: SplitViewBottomProps) => {
   return (
-    <div className="relative">
+    <div className="relative flex flex-col h-80 md:h-full md:justify-between md:w-1/3 md:max-w-[30rem]">
       {children}
     </div>
   )
@@ -30,7 +30,7 @@ const SplitViewBottom = ({ children }: SplitViewBottomProps) => {
 
 const SplitView = ({ children }: SplitViewProps) => {
   return (
-    <div className="flex flex-col h-dvh">
+    <div className="flex flex-col h-dvh md:flex-row">
       {children}
     </div>
   )
