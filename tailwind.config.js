@@ -7,18 +7,19 @@ export default {
     },
     colors: {
       'black': {
-        DEFAULT: 'rgb(29, 29, 29)'
+        DEFAULT: 'rgb(29, 29, 29)',
+        muted: 'rgb(143, 143, 143)'
       },
       'white': {
         DEFAULT: 'rgb(255, 255, 255)',
         muted: 'rgb(153, 153, 153)'
       },
       'red': {
-        DEFAULT: 'rgb(204, 33, 49)'
+        DEFAULT: 'rgb(230, 0, 18)'
       },
       'transparent': 'rgba(0, 0, 0, 0)',
       'border-color': {
-        DEFAULT: 'rgb(210, 210, 210)'
+        DEFAULT: 'rgb(225, 225, 225)'
       },
     }
   }
