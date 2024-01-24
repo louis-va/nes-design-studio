@@ -10,7 +10,6 @@ const Tab = ({ active, children, ...props }: TabProps) => {
   return (
     <button 
       className={`relative -bottom-[1px] -mt-[1px] border-b-2 px-2 py-3 transition-all duration-150 ${(active?'border-b-red opacity-100':'border-b-transparent opacity-50')}`} 
-      type="button" 
       {...props}
     >
       {children}
@@ -40,7 +39,7 @@ interface TabPanelProps extends React.ComponentProps<"div">{
 
 const TabPanel = ({ children, ...props }: TabPanelProps) => {
   return (
-    <div className={`flex-grow p-4 overflow-y-auto ${props.className} `}>
+    <div className={`p-4 h-40 overflow-y-scroll md:h-full ${props.className} `}>
       {children}
     </div>
   )
@@ -81,6 +80,9 @@ const Tabs = ({ children }: TabsProps) => {
               if (tab.props.onClick)
                 tab.props.onClick();
             }}
+            role="tab"
+            aria-selected={index===selected}
+            aria-controls={`tab-${index}`}
           >
             {tab.props.children}
           </Tab>
@@ -90,6 +92,8 @@ const Tabs = ({ children }: TabsProps) => {
         <TabPanel 
           key={index}
           className={index===selected?'':'hidden'}
+          role="tabpanel"
+          id={`tab-${index}`}
         >
           {panel.props.children}
         </TabPanel>
