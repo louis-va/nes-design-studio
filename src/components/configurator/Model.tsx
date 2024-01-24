@@ -45,10 +45,10 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/NES.gltf") as GLTFResult;
 
   // Set reactive colors
-  const topCoverColor = useNESModelStore((state) => state.topCoverColor)
-  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
-  const controlBarColor = useNESModelStore((state) => state.controlBarColor)
-  const letteringColor = useNESModelStore((state) => state.letteringColor)
+  const topCoverColor = useNESModelStore((state) => state.topCoverColor.code)
+  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor.code)
+  const controlBarColor = useNESModelStore((state) => state.controlBarColor.code)
+  const letteringColor = useNESModelStore((state) => state.letteringColor.code)
 
   return (
     <group {...props} dispose={null}>

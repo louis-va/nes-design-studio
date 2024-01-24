@@ -8,11 +8,10 @@ export default {
     colors: {
       'black': {
         DEFAULT: 'rgb(29, 29, 29)',
-        muted: 'rgb(143, 143, 143)'
+        muted: 'rgb(183, 183, 183)'
       },
       'white': {
-        DEFAULT: 'rgb(255, 255, 255)',
-        muted: 'rgb(153, 153, 153)'
+        DEFAULT: 'rgb(255, 255, 255)'
       },
       'red': {
         DEFAULT: 'rgb(230, 0, 18)'
