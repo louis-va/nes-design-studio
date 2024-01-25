@@ -1,7 +1,7 @@
 import { Suspense, useRef } from 'react'
 import { ContactShadows, Environment, CameraControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { useNESModelStore } from "@/store/store";
+import { useNESModelStore } from "@/utils/store";
 
 import NES from './Model';
 
@@ -17,7 +17,7 @@ const ModelView = () => {
     <section className="h-full w-full bg-gradient-to-b from-[#F6F6F6] to-[#E9E9E9]">
       <Canvas shadows camera={{ position: [3, 2, 4.75], fov: 25 }} className='cursor-grab active:cursor-grabbing'>
         <ambientLight intensity={1} />
-        <spotLight intensity={0.3} angle={0.5} penumbra={1} position={[10, 15, 10]} castShadow />
+        <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
         <Suspense fallback={null}>
           <NES />
         </Suspense>

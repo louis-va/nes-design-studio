@@ -9,7 +9,7 @@ Title: NES nintendo
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useNESModelStore } from "@/store/store";
+import { useNESModelStore } from "@/utils/store";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -40,15 +40,46 @@ type GLTFResult = GLTF & {
   };
 };
 
+const createMaterial = (color: string, finish: string) => {
+  let roughness=0, metalness=0;
+
+  switch (finish) {
+    case 'matte':
+      roughness = 0.45;
+      metalness = 0;
+      break;
+    case 'polished':
+      roughness = 0.10;
+      metalness = 0;
+      break;
+    case 'metallic':
+      roughness = 0.23;
+      metalness = 1;
+      break;
+  }
+  
+  return new THREE.MeshStandardMaterial({
+    color: color, 
+    roughness: roughness, 
+    metalness: metalness
+  })
+}
+
 export default function NES(props: JSX.IntrinsicElements["group"]) {
   // Load model
-  const { nodes, materials } = useGLTF("/NES.gltf") as GLTFResult;
+  const { nodes, materials } = useGLTF("/NES.glb") as GLTFResult;
 
-  // Set reactive colors
-  const topCoverColor = useNESModelStore((state) => state.topCoverColor.code)
-  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor.code)
-  const controlBarColor = useNESModelStore((state) => state.controlBarColor.code)
-  const letteringColor = useNESModelStore((state) => state.letteringColor.code)
+  // Get color states
+  const topCoverColor = useNESModelStore((state) => state.topCoverColor)
+  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
+  const controlBarColor = useNESModelStore((state) => state.controlBarColor)
+  const letteringColor = useNESModelStore((state) => state.letteringColor)
+
+  // Set elements colors
+  const topCoverMaterial = createMaterial(topCoverColor.code, topCoverColor.finish)
+  const bottomCoverMaterial = createMaterial(bottomCoverColor.code, bottomCoverColor.finish)
+  const controlBarMaterial = createMaterial(controlBarColor.code, controlBarColor.finish)
+  const letteringMaterial = createMaterial(letteringColor.code, letteringColor.finish)
 
   return (
     <group {...props} dispose={null}>
@@ -57,22 +88,19 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
           castShadow
           receiveShadow
           geometry={nodes.Object_4.geometry}
-          material={materials["Material.001"]}
-          material-color={controlBarColor}
+          material={controlBarMaterial}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_5.geometry}
-          material={materials["Material.002"]}
-          material-color={topCoverColor}
+          material={topCoverMaterial}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_6.geometry}
-          material={materials["Material.003"]}
-          material-color={bottomCoverColor}
+          material={bottomCoverMaterial}
         />
         <mesh
           castShadow
@@ -120,8 +148,7 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
           castShadow
           receiveShadow
           geometry={nodes.Object_14.geometry}
-          material={materials.logo}
-          material-color={letteringColor}
+          material={letteringMaterial}
         />
       </group>
     </group>

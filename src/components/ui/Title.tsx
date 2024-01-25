@@ -12,21 +12,21 @@ const Title = ({ as, variant, children, className='' }: TitleProps) => {
 
   switch (variant) {
     case "h1":
-      className += " text-2xl"
+      className += " text-2xl font-semibold"
       break;
     case "h2":
-      className += " text-xl"
+      className += " text-xl font-semibold"
       break;
     case "h3":
-      className += " text-lg"
+      className += " text-lg font-normal"
       break;
     case "h4":
-      className += " text-base"
+      className += " text-base font-normal"
       break;
   }
 
   return (
-    <Tag className={`font-semibold leading-tight ${className}`}>
+    <Tag className={`leading-tight ${className}`}>
       {children}
     </Tag>
   );
