@@ -34,11 +34,17 @@ export const COLORS_CATEGORIES: ColorCategory[] = [
     price: 5.99,
     colors: [
       { id: 'polished-black', name: 'Polished Black', code: '#242E26', finish: 'polished' },
+      { id: 'light-polished-gray', name: 'Light Polished Gray', code: '#D2D1CD', finish: 'polished' },
       { id: 'polished-blue', name: 'Polished Blue', code: '#00A0FF', finish: 'polished' },
+      { id: 'light-polished-blue', name: 'Light Polished Blue', code: '#A0EEFF', finish: 'polished' },
       { id: 'polished-purple', name: 'Polished Purple', code: '#8165FF', finish: 'polished' },
+      { id: 'light-polished-purple', name: 'Light Polished Purple', code: '#C8C7FF', finish: 'polished' },
       { id: 'polished-pink', name: 'Polished Pink', code: '#FB13E3', finish: 'polished' },
+      { id: 'light-polished-pink', name: 'Light Polished Pink', code: '#FFCBE7', finish: 'polished' },
       { id: 'polished-orange', name: 'Polished Orange', code: '#FE6D00', finish: 'polished' },
-      { id: 'polished-green', name: 'Polished Green', code: '#00B600', finish: 'polished' }
+      { id: 'light-polished-orange', name: 'Light Polished Orange', code: '#FFDD8B', finish: 'polished' },
+      { id: 'polished-green', name: 'Polished Green', code: '#00B600', finish: 'polished' },
+      { id: 'light-polished-green', name: 'Light Polished Green', code: '#B3F87A', finish: 'polished' }
     ]
   },
   {

@@ -40,7 +40,7 @@ const TopCoverConfig = () => {
   const setTopCoverColor = useNESModelStore((state) => state.setTopCoverColor)
   const topCoverColor = useNESModelStore((state) => state.topCoverColor)
 
-  const colors = ["light-gray", "light-blue", "light-purple", "light-pink", "light-orange", "light-green", "silver", "gold", "rose-gold"]
+  const colors = ["light-gray", "light-blue", "light-purple", "light-pink", "light-orange", "light-green", "light-polished-gray", "light-polished-blue", "light-polished-purple", "light-polished-pink", "light-polished-orange", "light-polished-green", "silver", "gold", "rose-gold"]
 
   return (
     <>
@@ -54,7 +54,7 @@ const BottomCoverConfig = () => {
   const setBottomCoverColor = useNESModelStore((state) => state.setBottomCoverColor)
   const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
 
-  const colors = ["gray", "blue", "purple", "pink", "orange", "green", "titanium", "copper"]
+  const colors = ["gray", "blue", "purple", "pink", "orange", "green", "polished-black", "polished-blue", "polished-purple", "polished-pink", "polished-orange", "polished-green", "titanium", "copper"]
 
   return (
     <>
@@ -68,7 +68,7 @@ const ControlBarConfig = () => {
   const setControlBarColor = useNESModelStore((state) => state.setControlBarColor)
   const controlBarColor = useNESModelStore((state) => state.controlBarColor)
 
-  const colors = ["gray", "blue", "purple", "pink", "orange", "green", "polished-black", "polished-blue", "polished-purple", "polished-pink", "polished-orange", "polished-green",]
+  const colors = ["gray", "blue", "purple", "pink", "orange", "green", "polished-black", "polished-blue", "polished-purple", "polished-pink", "polished-orange", "polished-green"]
 
   return (
     <>
