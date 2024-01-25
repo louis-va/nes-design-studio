@@ -46,6 +46,22 @@ const TabPanel = ({ children, ...props }: TabPanelProps) => {
 }
 
 
+// TabPanelList
+interface TabPanelListProps {
+  children: React.ReactNode;
+}
+
+const TabPanelList = ({ children }: TabPanelListProps) => {
+  return (
+    <div className="relative">
+      <div className="absolute top-0 h-4 w-full z-20 pointer-events-none bg-gradient-to-b from-[#FFFFFFDD] to-[#FFFFFF00]"></div>
+      <div className="absolute bottom-0 h-4 w-full z-20 pointer-events-none bg-gradient-to-t from-[#FFFFFFDD] to-[#FFFFFF00]"></div>
+      {children}
+    </div>
+  )
+}
+
+
 // Tabs
 interface TabsProps {
   children: React.ReactNode;
@@ -88,16 +104,18 @@ const Tabs = ({ children }: TabsProps) => {
           </Tab>
         ))}
       </TabList>
-      {panels.map((panel: React.ReactElement, index: number) => (
-        <TabPanel 
-          key={index}
-          className={index===selected?'':'hidden'}
-          role="tabpanel"
-          id={`tab-${index}`}
-        >
-          {panel.props.children}
-        </TabPanel>
-      ))}
+      <TabPanelList>
+        {panels.map((panel: React.ReactElement, index: number) => (
+          <TabPanel 
+            key={index}
+            className={index===selected?'':'hidden'}
+            role="tabpanel"
+            id={`tab-${index}`}
+          >
+            {panel.props.children}
+          </TabPanel>
+        ))}
+      </TabPanelList>
     </>
   )
 }

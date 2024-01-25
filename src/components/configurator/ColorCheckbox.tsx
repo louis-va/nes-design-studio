@@ -100,7 +100,7 @@ const ColorCheckbox = ({ name, color, finish, checked=false, onClick }: ColorChe
 
       {(finish=="polished") ? (
         <div 
-          style={{background: `linear-gradient(45deg, #FFFFFF00, #FFFFFFAA)`}} 
+          style={{background: `linear-gradient(45deg, #FFFFFF00, #FFFFFFDD)`}} 
           className="absolute w-full h-full z-10"
         ></div>
       ) : (<></>)}

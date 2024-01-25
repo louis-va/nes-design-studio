@@ -17,7 +17,7 @@ const Configurator = () => {
           <Tab onClick={()=>setCamera(3, 2.5, 5, 6)}><img src={nesTopIcon} className="w-12 h-12" role="presentation" /></Tab>
           <Tab onClick={()=>setCamera(2, -2.5, 5, 4.5)}><img src={nesBottomIcon} className="w-12 h-12" role="presentation"  /></Tab>
           <Tab onClick={()=>setCamera(0, 4, 5, 5)}><img src={nesStripeIcon} className="w-12 h-12" role="presentation" /></Tab>
-          <Tab onClick={()=>setCamera(-2, 1, 4, 3)}><img src={nesTextIcon} className="w-12 h-12" role="presentation" /></Tab>
+          <Tab onClick={()=>setCamera(-2.2, -1, 4, 3)}><img src={nesTextIcon} className="w-12 h-12" role="presentation" /></Tab>
         </TabList>
         <TabPanel>
           <TopCoverConfig />
