@@ -14,7 +14,7 @@ const ConfigFooter = () => {
           text="Continue"
           icon={<Icon name="arrow-r" className="w-4 h-4" />}
         />
-      </div>
+      </div> 
     </footer>
   )
 } 

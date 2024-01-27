@@ -106,7 +106,7 @@ const ColorCheckbox = ({ name, color, finish, checked=false, onClick }: ColorChe
       ) : (<></>)}
       
       {(checked) ? (
-          <Icon name="check" className="w-5 h-5 text-black/80 bg-white/60 rounded-full z-20" />
+        <Icon name="check" className="w-5 h-5 text-black/80 bg-white/60 rounded-full z-20" />
       ) : (<></>)}
     </button>
   )
