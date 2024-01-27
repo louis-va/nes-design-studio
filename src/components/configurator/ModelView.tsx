@@ -1,14 +1,14 @@
 import { Suspense, useRef } from 'react'
 import { ContactShadows, Environment, CameraControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { useNESModelStore } from "@/utils/store";
+import { useStore } from "@/utils/store";
 
 import NES from './Model';
 
 const ModelView = () => {
   // Set reactive camera movements
-  const cameraPosition = useNESModelStore((state) => state.cameraPosition)
-  const cameraZoom = useNESModelStore((state) => state.cameraZoom)
+  const cameraPosition = useStore((state) => state.cameraPosition)
+  const cameraZoom = useStore((state) => state.cameraZoom)
   const cameraControlsRef = useRef<CameraControls | null>(null);
   cameraControlsRef.current?.setPosition(cameraPosition.x, cameraPosition.y, cameraPosition.z, true)
   cameraControlsRef.current?.dollyTo(cameraZoom, true)

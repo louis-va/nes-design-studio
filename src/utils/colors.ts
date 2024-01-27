@@ -71,3 +71,13 @@ export const getColorFromId = (id: string) => {
   }
   return null;
 }
+
+export const getColorPrice = (id: string) => {
+  for (const category of COLORS_CATEGORIES) {
+    const foundColor = category.colors.find((color) => color.id === id);
+    if (foundColor) {
+      return category.price;
+    }
+  }
+  return null;
+}

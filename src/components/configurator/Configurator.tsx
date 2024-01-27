@@ -1,5 +1,5 @@
 import { Tabs, TabList, Tab, TabPanel } from "@/components/ui/Tabs"
-import { useNESModelStore } from "@/utils/store";
+import { useStore } from "@/utils/store";
 import Title from "../ui/Title";
 import ColorCheckboxGrid from "./ColorCheckbox";
 import nesTopIcon from "@/assets/images/nes-top-icon.svg"
@@ -8,7 +8,7 @@ import nesStripeIcon from "@/assets/images/nes-stripe-icon.svg"
 import nesTextIcon from "@/assets/images/nes-text-icon.svg"
 
 const Configurator = () => {
-  const setCamera = useNESModelStore((state) => state.setCamera)
+  const setCamera = useStore((state) => state.setCamera)
 
   return (
     <section className="flex-grow">
@@ -37,8 +37,8 @@ const Configurator = () => {
 }
 
 const TopCoverConfig = () => {
-  const setTopCoverColor = useNESModelStore((state) => state.setTopCoverColor)
-  const topCoverColor = useNESModelStore((state) => state.topCoverColor)
+  const setTopCoverColor = useStore((state) => state.setTopCoverColor)
+  const topCoverColor = useStore((state) => state.topCoverColor)
 
   const colors = ["light-gray", "light-blue", "light-purple", "light-pink", "light-orange", "light-green", "light-polished-gray", "light-polished-blue", "light-polished-purple", "light-polished-pink", "light-polished-orange", "light-polished-green", "silver", "gold", "rose-gold"]
 
@@ -51,8 +51,8 @@ const TopCoverConfig = () => {
 }
 
 const BottomCoverConfig = () => {
-  const setBottomCoverColor = useNESModelStore((state) => state.setBottomCoverColor)
-  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
+  const setBottomCoverColor = useStore((state) => state.setBottomCoverColor)
+  const bottomCoverColor = useStore((state) => state.bottomCoverColor)
 
   const colors = ["gray", "blue", "purple", "pink", "orange", "green", "polished-black", "polished-blue", "polished-purple", "polished-pink", "polished-orange", "polished-green", "titanium", "copper"]
 
@@ -65,8 +65,8 @@ const BottomCoverConfig = () => {
 }
 
 const ControlBarConfig = () => {
-  const setControlBarColor = useNESModelStore((state) => state.setControlBarColor)
-  const controlBarColor = useNESModelStore((state) => state.controlBarColor)
+  const setControlBarColor = useStore((state) => state.setControlBarColor)
+  const controlBarColor = useStore((state) => state.controlBarColor)
 
   const colors = ["gray", "blue", "purple", "pink", "orange", "green", "polished-black", "polished-blue", "polished-purple", "polished-pink", "polished-orange", "polished-green"]
 
@@ -79,8 +79,8 @@ const ControlBarConfig = () => {
 }
 
 const LetteringConfig = () => {
-  const setLetteringColor = useNESModelStore((state) => state.setLetteringColor)
-  const letteringColor = useNESModelStore((state) => state.letteringColor)
+  const setLetteringColor = useStore((state) => state.setLetteringColor)
+  const letteringColor = useStore((state) => state.letteringColor)
 
   const colors = ["gray", "nintendo-red", "blue", "purple", "pink", "orange", "green", "titanium", "copper", "mario-metal"]
 

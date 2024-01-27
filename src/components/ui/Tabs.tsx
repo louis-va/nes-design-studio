@@ -54,8 +54,8 @@ interface TabPanelListProps {
 const TabPanelList = ({ children }: TabPanelListProps) => {
   return (
     <div className="relative">
-      <div className="absolute top-0 h-4 w-full z-20 pointer-events-none bg-gradient-to-b from-[#FFFFFFDD] to-[#FFFFFF00]"></div>
-      <div className="absolute bottom-0 h-4 w-full z-20 pointer-events-none bg-gradient-to-t from-[#FFFFFFDD] to-[#FFFFFF00]"></div>
+      <div className="absolute top-0 h-5 w-full z-20 pointer-events-none bg-gradient-to-b from-[#FFFFFFAA] to-[#FFFFFF00]"></div>
+      <div className="absolute bottom-0 h-5 w-full z-20 pointer-events-none bg-gradient-to-t from-[#FFFFFFAA] to-[#FFFFFF00]"></div>
       {children}
     </div>
   )

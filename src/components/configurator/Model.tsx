@@ -9,7 +9,7 @@ Title: NES nintendo
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { useNESModelStore } from "@/utils/store";
+import { useStore } from "@/utils/store";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -70,10 +70,10 @@ export default function NES(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/NES.glb") as GLTFResult;
 
   // Get color states
-  const topCoverColor = useNESModelStore((state) => state.topCoverColor)
-  const bottomCoverColor = useNESModelStore((state) => state.bottomCoverColor)
-  const controlBarColor = useNESModelStore((state) => state.controlBarColor)
-  const letteringColor = useNESModelStore((state) => state.letteringColor)
+  const topCoverColor = useStore((state) => state.topCoverColor)
+  const bottomCoverColor = useStore((state) => state.bottomCoverColor)
+  const controlBarColor = useStore((state) => state.controlBarColor)
+  const letteringColor = useStore((state) => state.letteringColor)
 
   // Set elements colors
   const topCoverMaterial = createMaterial(topCoverColor.code, topCoverColor.finish)
