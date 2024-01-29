@@ -3,8 +3,8 @@ import { Color } from './types'
 import { getColorFromId, getColorPrice } from "@/utils/colors";
 import { setUrlParameter, getUrlParameter } from './url.utils';
 
-interface Item {
-  value: string;
+interface Product {
+  name: string;
   price: number;
 }
 
@@ -14,7 +14,7 @@ interface Cart {
   bottomCoverPrice: number;
   controlBarPrice: number;
   letteringPrice: number;
-  accessories?: Item[];
+  products?: Product[];
 }
 
 interface Store {
@@ -28,6 +28,8 @@ interface Store {
   setCameraPosition: (x: number, y: number, z: number) => void;
   setCameraZoom: (distance: number) => void;
   setCamera: (x: number, y: number, z: number, distance: number) => void;
+  addProduct: (name: string, price: number) => void;
+  removeProduct: (name: string) => void;
   setTopCoverColor: (color: Color) => void;
   setBottomCoverColor: (color: Color) => void;
   setControlBarColor: (color: Color) => void;
@@ -58,11 +60,30 @@ const useStore = create<Store>()((set) => ({
     topCoverPrice: setDefaultPrice("top-cover", "light-gray"),
     bottomCoverPrice: setDefaultPrice("bottom-cover", "gray"),
     controlBarPrice: setDefaultPrice("control-bar", "polished-black"),
-    letteringPrice: setDefaultPrice("lettering", "nintendo-red")
+    letteringPrice: setDefaultPrice("lettering", "nintendo-red"),
+    products: []
   },
   setCameraPosition: (x: number, y: number, z: number) => set(() => ({ cameraPosition: {x, y, z} })),
   setCameraZoom: (distance: number) => set(() => ({ cameraZoom: distance })),
   setCamera: (x: number, y: number, z: number, distance: number) => set(() => ({ cameraPosition: {x, y, z}, cameraZoom: distance })),
+  addProduct: (name: string, price: number) => set((state) => ({
+    cart: {
+      ...state.cart,
+      products: [
+        ...state.cart.products ?? [],
+        {
+          name,
+          price
+        }
+      ]
+    }
+  })),
+  removeProduct: (name: string) => set((state) => ({
+    cart: {
+      ...state.cart,
+      products: (state.cart.products??[]).filter(product => product.name !== name)
+    }
+  })),
   setTopCoverColor: (color: Color) => {
     set((state) => ({ 
       topCoverColor: color, 

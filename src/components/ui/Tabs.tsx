@@ -39,7 +39,7 @@ interface TabPanelProps extends React.ComponentProps<"div">{
 
 const TabPanel = ({ children, ...props }: TabPanelProps) => {
   return (
-    <div className={`p-4 h-48 overflow-y-scroll md:h-full ${props.className} `}>
+    <div className={`p-4 h-60 overflow-y-scroll md:h-[calc(100dvh-11.6rem)] ${props.className} `}>
       {children}
     </div>
   )

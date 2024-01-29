@@ -22,7 +22,7 @@ const SplitViewTop = ({ children }: SplitViewTopProps) => {
 
 const SplitViewBottom = ({ children }: SplitViewBottomProps) => {
   return (
-    <div className="relative flex flex-col md:h-full md:justify-between md:w-1/3 md:max-w-[30rem]">
+    <div className="relative flex flex-col md:justify-between md:w-1/3 md:max-w-[30rem]">
       {children}
     </div>
   )

@@ -1,5 +1,5 @@
 interface IconProps {
-  name: 'arrow-r' | 'check';
+  name: 'arrow-r' | 'check' | 'checkbox';
   className?: string;
 }
 
@@ -23,6 +23,12 @@ const Icon = ({ name, className='' }: IconProps) => {
           <path d="M9 1.6875C4.96153 1.6875 1.6875 4.96153 1.6875 9C1.6875 13.0385 4.96153 16.3125 9 16.3125C13.0385 16.3125 16.3125 13.0385 16.3125 9C16.3125 4.96153 13.0385 1.6875 9 1.6875ZM8.15625 11.8125L5.0625 8.71875L5.625 7.875L8.15625 9.5625L12.0817 6.1875L12.9375 7.03125L8.15625 11.8125Z" fill="currentColor"/>
         </svg>
       );
+    case 'checkbox':
+      return (
+        <svg {...props} width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M42.1875 85.9375L9.375 51.5625L14.0625 45.3125L40.625 64.0625L85.9375 18.75L92.1875 25L42.1875 85.9375Z" fill="currentColor"/>
+        </svg>
+      )
   }
 };
 

@@ -5,12 +5,14 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import './main.css'
 import Home from "@/pages/Home/HomePage"
 import Configure from "@/pages/Configure/ConfigurePage"
+import Accessories from "@/pages/Accessories/AccessoriesPage"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<Home />} />
       <Route path="/configure" element={<Configure />} />
+      <Route path="/configure/accessories" element={<Accessories />} />
     </Route>
   )
 );

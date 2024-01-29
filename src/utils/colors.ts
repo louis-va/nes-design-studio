@@ -31,7 +31,7 @@ export const COLORS_CATEGORIES: ColorCategory[] = [
   {
     title: "Polished",
     id: "polished",
-    price: 5.99,
+    price: 5,
     colors: [
       { id: 'polished-black', name: 'Polished Black', code: '#242E26', finish: 'polished' },
       { id: 'light-polished-gray', name: 'Light Polished Gray', code: '#D2D1CD', finish: 'polished' },
@@ -50,7 +50,7 @@ export const COLORS_CATEGORIES: ColorCategory[] = [
   {
     title: "Metallic",
     id: "metallic",
-    price: 9.99,
+    price: 10,
     colors: [
       { id: 'silver', name: 'Silver', code: '#F2F1ED', finish: 'metallic' },
       { id: 'titanium', name: 'Titanium', code: '#6d6e71', finish: 'metallic' },

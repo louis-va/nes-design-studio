@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface ButtonProps {
-  text: string;
+  text?: string;
   icon?: ReactNode;
   variant?: "primary" | "secondary";
   disabled?: boolean;
@@ -13,10 +13,10 @@ const Button = ({ text, icon, variant="primary", disabled=false, onClick, classN
 
   switch (variant) {
     case "primary":
-      className += ` font-normal text-white ${disabled ? 'bg-red/30' : 'bg-red'}`;
+      className += ` font-normal text-white bg-red`;
       break;
     case "secondary":
-      className += ` font-normal text-black ${disabled ? 'bg-white-muted/50' : 'bg-white-muted'}`;
+      className += ` font-normal text-black/75 border border-border-color`;
       break;
   }
 
