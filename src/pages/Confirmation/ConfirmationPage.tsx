@@ -4,9 +4,9 @@ import Header from "@/components/layout/Header"
 import ModelView from "@/components/configurator/ModelView"
 import ConfigSteps from "@/components/configurator/ConfigSteps"
 import ConfigFooter from "@/components/configurator/ConfigFooter"
-import Checkout from "@/components/configurator/Checkout"
+import Confirmation from "@/components/configurator/Confirmation"
 
-const Confirmation = () => {
+const ConfirmationPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -17,12 +17,11 @@ const Confirmation = () => {
           <ModelView />
         </SplitViewTop>
         <SplitViewBottom>
-          <Checkout />
-          <ConfigSteps step={3} />
+          <Confirmation />
+          <ConfigSteps step={4} />
           <ConfigFooter 
-            btnText="Pay" 
-            btnAction={()=>navigate('#')} 
-            prevBtnAction={()=>navigate('/accessories')} 
+            btnText="Home"
+            btnAction={()=>navigate('/')} 
           />
         </SplitViewBottom>
       </SplitView>
@@ -30,4 +29,4 @@ const Confirmation = () => {
   )
 }
 
-export default Confirmation
+export default ConfirmationPage

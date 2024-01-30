@@ -5,14 +5,16 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import './main.css'
 import Configure from "@/pages/Configure/ConfigurePage"
 import Accessories from "@/pages/Accessories/AccessoriesPage"
-import Confirmation from '@/pages/Confirmation/ConfirmationPage';
+import Checkout from '@/pages/Checkout/CheckoutPage';
+import ConfirmationPage from './pages/Confirmation/ConfirmationPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route index element={<Configure />} />
       <Route path="/accessories" element={<Accessories />} />
-      <Route path="/confirmation" element={<Confirmation />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/confirmation" element={<ConfirmationPage />} />
     </Route>
   )
 );

@@ -15,12 +15,12 @@ const Checkout = () => {
   const products = cart.products
 
   return(
-    <section className="md:h-[calc(100dvh-11.6rem)]">
+    <section>
       <div className="p-4 w-full py-3 border-b border-b-border-color">
         <Title as="h1" variant="h2">Summary</Title>
       </div>
 
-      <div className="p-4 h-64 overflow-y-scroll">
+      <div className="p-4 h-64 overflow-y-scroll md:h-[calc(100dvh-10rem)]">
         <div>
           <div className="flex justify-between">
             <Typography as="p" variant="base">NES</Typography>

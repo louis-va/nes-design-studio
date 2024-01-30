@@ -5,7 +5,7 @@ interface ConfigHeaderProps {
 }
 
 const ConfigSteps = ({ step }: ConfigHeaderProps) => {
-  const steps = ["Color selection", "Accessories", "Payment"]
+  const steps = ["Color selection", "Accessories", "Payment", "Confirmation"]
 
   return (
     <div className="flex w-full px-4 py-2 border-t border-t-border-color">
