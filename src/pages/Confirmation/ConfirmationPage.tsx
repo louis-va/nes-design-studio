@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom"
 import { SplitView, SplitViewTop, SplitViewBottom } from "@/components/layout/SplitView"
 import Header from "@/components/layout/Header"
 import ModelView from "@/components/configurator/ModelView"
-import Configurator from "@/components/configurator/Configurator"
 import ConfigSteps from "@/components/configurator/ConfigSteps"
 import ConfigFooter from "@/components/configurator/ConfigFooter"
+import Checkout from "@/components/configurator/Checkout"
 
-const Configure = () => {
+const Confirmation = () => {
   const navigate = useNavigate();
 
   return (
@@ -17,13 +17,17 @@ const Configure = () => {
           <ModelView />
         </SplitViewTop>
         <SplitViewBottom>
-          <Configurator />
-          <ConfigSteps step={1} />
-          <ConfigFooter btnText="Continue" btnAction={()=>navigate('/accessories')} />
+          <Checkout />
+          <ConfigSteps step={3} />
+          <ConfigFooter 
+            btnText="Pay" 
+            btnAction={()=>navigate('#')} 
+            prevBtnAction={()=>navigate('/accessories')} 
+          />
         </SplitViewBottom>
       </SplitView>
     </>
   )
 }
 
-export default Configure
+export default Confirmation

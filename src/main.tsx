@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom/client'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 
 import './main.css'
-import Home from "@/pages/Home/HomePage"
 import Configure from "@/pages/Configure/ConfigurePage"
 import Accessories from "@/pages/Accessories/AccessoriesPage"
+import Confirmation from '@/pages/Confirmation/ConfirmationPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
-      <Route index element={<Home />} />
-      <Route path="/configure" element={<Configure />} />
-      <Route path="/configure/accessories" element={<Accessories />} />
+      <Route index element={<Configure />} />
+      <Route path="/accessories" element={<Accessories />} />
+      <Route path="/confirmation" element={<Confirmation />} />
     </Route>
   )
 );

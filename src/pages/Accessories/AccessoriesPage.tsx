@@ -6,7 +6,7 @@ import ConfiguratorAccessories from "@/components/configurator/ConfiguratorAcces
 import ConfigSteps from "@/components/configurator/ConfigSteps"
 import ConfigFooter from "@/components/configurator/ConfigFooter"
 
-const Configure = () => {
+const Accessories = () => {
   const navigate = useNavigate();
 
   return (
@@ -21,8 +21,8 @@ const Configure = () => {
           <ConfigSteps step={2} />
           <ConfigFooter 
             btnText="Continue" 
-            btnAction={()=>navigate('/configure/accessories')} 
-            prevBtnAction={()=>navigate('/configure/')} 
+            btnAction={()=>navigate('/confirmation')} 
+            prevBtnAction={()=>navigate('/')} 
           />
         </SplitViewBottom>
       </SplitView>
@@ -30,4 +30,4 @@ const Configure = () => {
   )
 }
 
-export default Configure
+export default Accessories
