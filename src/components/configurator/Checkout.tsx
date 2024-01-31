@@ -20,7 +20,7 @@ const Checkout = () => {
         <Title as="h1" variant="h2">Summary</Title>
       </div>
 
-      <div className="p-4 h-64 overflow-y-scroll md:h-[calc(100dvh-10rem)]">
+      <div className="p-4 h-64 overflow-y-scroll md:h-[calc(100dvh-10.2rem)]">
         <div>
           <div className="flex justify-between">
             <Typography as="p" variant="base">NES</Typography>

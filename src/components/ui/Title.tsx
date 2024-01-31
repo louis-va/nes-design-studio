@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 interface TitleProps {
-  as: keyof JSX.IntrinsicElements;
+  as: "h1" | "h2" | "h3" | "h4";
   variant: "h1" | "h2" | "h3" | "h4";
   children: ReactNode;
   className?: string;
