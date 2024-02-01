@@ -2,7 +2,7 @@
 
 3D Configurator for the Nintendo Entertainment System.
 
-[View demo](https://nes-design-studio.lou-va.com/)
+[View demo](https://nds.lou-va.com/)
 
 ![Some screenshots showing the different pages of the application](screenshots.jpg)
 
